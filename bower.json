@@ -1,0 +1,20 @@
+{
+  "name": "frontend_recipe_site",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Kinjalc/frontend_recipe_site",
+  "authors": [
+    "KC"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.2",
+    "angular-route": "~1.4.2"
+  }
+}
