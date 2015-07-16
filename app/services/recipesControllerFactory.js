@@ -3,7 +3,7 @@
   var recipesFactory = function($http) {
     var factory = {};
     factory.recipes = [];
-    factory.nutritionPickRecipes = [];
+    // factory.nutritionPickRecipes = [];
     factory.recipe = {};
 
 
@@ -21,12 +21,12 @@
 
     }
 
-    // factory.getNutritionPickRecipes = function(nutritionPick) {
-    //   return $http.get('http://localhost:3000/recipes/' + nutritionPick).success(function(response) {
-    //     angular.copy(response, factory.nutritionPickRecipes);
-    //   });
+    factory.getNutritionPickRecipes = function(nutritionPick) {
+      return $http.get('http://localhost:3000/recipes/nutrition/' + nutritionPick).success(function(response) {
+        angular.copy(response, factory.recipes);
+      });
 
-    // }
+    }
 
 
     return factory

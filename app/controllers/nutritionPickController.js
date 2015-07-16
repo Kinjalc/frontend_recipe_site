@@ -4,6 +4,7 @@
     // this.appSettings = appSettings;
     this.recipes = recipesFactory.nutritionPickRecipes;
     this.recipe = recipesFactory.recipe;
+    this.selectedNutritionPick = this.nutritionPick[0];
     // this.dailyCalcs = 1000;
 
     // var getRecipe = function() {
@@ -23,7 +24,7 @@
     //     return percentCal;
     //   })
     // }
-  };
+  }
 
   NutritionPickController.$inject = ['recipesFactory'];
   angular.module('recipeApp').controller("NutritionPickController", NutritionPickController);

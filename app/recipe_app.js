@@ -5,14 +5,12 @@
 
   app.config(function($routeProvider) {
     $routeProvider
-    // .when('/', {
-    //   templateUrl: 'app/views/homePage.html'
-    // })
-    // .when('/:nutritionPick', {
-    //   controller: 'NutritionPickController',
-    //   controllerAs: 'nutritionPickCtrl',
-    //   templateUrl: 'app/views/nutritionPick.html'
-    // })
+      .when('/', {
+        templateUrl: 'app/views/homePage.html',
+        controller: 'SelectNutritionController',
+        controllerAs: 'selectNutritionCtrl'
+      })
+
 
     .when('/recipes', {
       controller: 'RecipesController',
