@@ -1,27 +1,41 @@
 (function recipesAppIIFE() {
   var app = angular.module('recipeApp', ['ngRoute']);
 
+
+
   app.config(function($routeProvider) {
     $routeProvider
-      .when('/', {
-        controller: 'recipesController',
-        // controllerAs: 'recipesCtrl',
-        // templateUrl: 'app/views/customers_done.html',
+    // .when('/', {
+    //   templateUrl: 'app/views/homePage.html'
+    // })
+    // .when('/:nutritionPick', {
+    //   controller: 'NutritionPickController',
+    //   controllerAs: 'nutritionPickCtrl',
+    //   templateUrl: 'app/views/nutritionPick.html'
+    // })
 
-      })
+    .when('/recipes', {
+      controller: 'RecipesController',
+      controllerAs: 'recipesCtrl',
+      templateUrl: 'app/views/recipes.html',
+
+    })
       .when('/recipes/:recipeId', {
         controller: 'RecipeController',
         controllerAs: 'recipeCtrl',
         templateUrl: 'app/views/recipe.html'
       })
-    // .when('/orders/:customerId', {
-    //   controller: 'ordersController',
-    //   controllerAs: 'ordersCtrl',
-    //   templateUrl: 'app/views/orders_done.html',
+
 
     .otherwise({
       redirectTo: '/'
     });
   });
+
+  app.config(['$httpProvider',
+    function($httpProvider) {
+      $httpProvider.defaults.useXDomain = true;
+    }
+  ])
 
 })();

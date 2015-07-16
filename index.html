@@ -5,18 +5,12 @@
      <script src='bower_components/angular-route/angular-route.js'></script>
      <script type='text/javascript' src='app/recipe_app.js'></script>
      <script type='text/javascript' src='app/services/recipesControllerFactory.js'></script>
-      <script type='text/javascript' src='app/controllers/recipesController.js'></script>
+<!--      <script type='text/javascript' src='app/controllers/nutritionPickController.js'></script> -->
+     <script type='text/javascript' src='app/controllers/recipesController.js'></script>
      <script type='text/javascript' src='app/controllers/recipeController.js'></script>
   </head>
   <!-- like var petsCtrl = new PetsController(); -->
-  <body ng-controller="RecipesController as recipesCtrl">
-    <h3>Recipes</h3>
-    <div ng-repeat="recipe in recipesCtrl.recipes">
-      <h1>{{recipe.title}}</h1>
-      <p>Total calories: {{recipe.totalCalories}}</p>
-      <p>Percentage total Calories:{{ (recipe.totalCalories / $parent.recipesCtrl.dailyCalcs )*100}}</p>
-      <a href="#/recipes/{{recipe._id}}">View recipe</a>
-    </div>
+  <body >
     <ng-view></ng-view>
    <!--  <select ng-model="recipesCtrl.selectedRecipe" ng-options="recipe.title for recipe in recipesCtrl.recipes"></select>
       <h1>{{recipesCtrl.selectedRecipe.title}}</h1>

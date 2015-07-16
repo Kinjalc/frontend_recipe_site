@@ -1,9 +1,8 @@
 <h3>Recipes</h3>
-    <div ng-repeat="recipe in recipesCtrl.recipes">
+    <div ng-repeat="recipe in nutritionPickCtrl.recipes">
       <div ng-if="recipe.totalCalories!==NaN">
         <a ng-href="#/recipes/{{recipe._id}}">{{recipe.title}}</a>
         <p>Total calories: {{recipe.totalCalories/recipe.serving || recipe.totalCalories/4}} calories per serving</p>
-        <img ng-src="{{recipe.image_url}}">
         <!-- <p>Percentage total Calories:{{ (recipe.totalCalories / recipesCtrl.dailyCalcs || recipe.totalCalories/2000)*100}}</p >-->
 
       <!-- <a href="#/recipes/{{recipe._id}}">View recipe</a> -->
