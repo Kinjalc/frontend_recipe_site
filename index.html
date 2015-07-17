@@ -3,7 +3,9 @@
   <head>
      <script type='text/javascript' src='bower_components/angular/angular.js'></script>
      <script src='bower_components/angular-route/angular-route.js'></script>
-     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href='app/css/index.css'/>
      <script type='text/javascript' src='app/recipe_app.js'></script>
      <script type='text/javascript' src='app/services/recipesControllerFactory.js'></script>
      <script type='text/javascript' src='app/controllers/selectNutritionController.js'></script>
@@ -12,12 +14,14 @@
   </head>
   <!-- like var petsCtrl = new PetsController(); -->
   <body >
+  <div class="outer">
     <div class="container">
       <ng-view></ng-view>
    <!--  <select ng-model="recipesCtrl.selectedRecipe" ng-options="recipe.title for recipe in recipesCtrl.recipes"></select>
       <h1>{{recipesCtrl.selectedRecipe.title}}</h1>
       <p>Total calories: {{recipesCtrl.selectedRecipe.totalCalories}}</p>
       <p>Percentage total Calories:{{ (recipesCtrl.selectedRecipe.totalCalories / recipesCtrl.dailyCalcs )*100}}</p> -->
-      </div>
+        </div>
+    </div>
   </body>
 </html>
