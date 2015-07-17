@@ -1,4 +1,4 @@
-<div class='text-center'>
+<div class='text-center homePage col-md-12'>
   <h1>NUTRILICIOUS</h1>
   <h3> Now you can choose recipes based on nutrition content</h3>
   <h4>Pick what you want to eat</h4>
@@ -15,10 +15,12 @@
               <option value="highFat">High Fat</option>
               <option value="highProtein">High Protein</option>
               <option value="highCarbohydrates">High Carbohydrates</option>
+              <option value="lowFat">Low Fat</option>
+              <option value="lowCarbohydrates">Low Carbohydrates</option>
     </select>
     </button>
   </div>
-  <div >
+  <div class="recipeList">
     <div ng-repeat="recipe in selectNutritionCtrl.recipes">
         <div ng-if="recipe.totalCalories!==NaN">
           <a ng-href="#/recipes/{{recipe._id}}">{{recipe.title}}</a>

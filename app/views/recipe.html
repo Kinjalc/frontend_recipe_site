@@ -1,66 +1,74 @@
-<div  class="col-md-6 col-md-offset-3">
-  <h3>{{recipeCtrl.recipe.title}}</h3>
-  <img ng-src="{{recipeCtrl.recipe.image_url}}">
-  <p>Total calories: {{recipeCtrl.recipe.totalCalories/recipe.serving || recipeCtrl.recipe.totalCalories/4}} calories per serving</p>
-  <p> Carbohydrates Percent= {{recipeCtrl.recipe.percentCarbohydrates}} % </p>
-  <p> Proteins Percent= {{recipeCtrl.recipe.percentProtein}} % </p>
-  <p> Proteins Percent= {{recipeCtrl.recipe.percentFat}} % </p>
-
-
-  <table class="table-bordered">
-    <tr>
-      <th >Nutrients</th>
-      <th >Values</th>
-    </tr>
-
-    <tr>
-      <td>Percent Carbohydrates</td>
-      <td>{{((recipeCtrl.recipe.percentCarbohydrates/100)*( recipeCtrl.recipe.totalCalories/recipe.serving || recipeCtrl.recipe.totalCalories/4)/4)}} g</td>
-    </tr>
-    <tr>
-      <td>Percent Proteins</td>
-      <td>{{((recipeCtrl.recipe.percentProtein/100)*( recipeCtrl.recipe.totalCalories/recipe.serving || recipeCtrl.recipe.totalCalories/4)/4)}} g </td>
-    </tr>
-    <tr>
-      <td>Percent Fat</td>
-      <td>{{((recipeCtrl.recipe.percentFat/100)*( recipeCtrl.recipe.totalCalories/recipe.serving || recipeCtrl.recipe.totalCalories/4)/9)}} g </td>
-    </tr>
-    <tr>
-      <td>Monounsaturated Fat</td>
-      <td>{{recipeCtrl.recipe.monoUnsaturatedFat}} g  </td>
-    </tr>
-    <tr>
-      <td>Polyunsaturated Fat</td>
-      <td>{{recipeCtrl.recipe.polyUnsaturatedFat}} g </td>
-    </tr>
-    <tr>
-      <td>Vitamin C </td>
-      <td>{{recipeCtrl.recipe.vitaminC}} mg </td>
-    </tr>
-    <tr>
-      <td>vitamin A</td>
-      <td>{{recipeCtrl.recipe.vitaminA}} ug </td>
-    </tr>
-    <tr>
-      <td>vitamin B6</td>
-      <td>{{recipeCtrl.recipe.vitaminB6}} mg </td>
-    </tr>
-    <tr>
-      <td>vitamin B12</td>
-      <td>{{recipeCtrl.recipe.vitaminB12}} ug </td>
-    </tr>
-  </table>
-
-  <div class="ingredients" >
-    <div ng-repeat="ingredient in recipeCtrl.recipe.ingredients">
-      <p>{{ingredient.name}}</p>
+<div  class=".col-lg-8 col-md-8 col-md-offset-3 recipe " >
+  <!-- <div class="recipe text-center"> -->
+ <!--  <div class= "text-center"> -->
+    <h3>{{recipeCtrl.recipe.title}}</h3>
+    <div class="calories">
+      <img ng-src="{{recipeCtrl.recipe.image_url}}">
+      <p>Total calories: {{recipeCtrl.recipe.totalCalories/recipe.serving || recipeCtrl.recipe.totalCalories/4}} calories per serving</p>
+      <p> Carbohydrates Percent= {{recipeCtrl.recipe.percentCarbohydrates}} % </p>
+      <p> Proteins Percent= {{recipeCtrl.recipe.percentProtein}} % </p>
+      <p> Proteins Percent= {{recipeCtrl.recipe.percentFat}} % </p>
     </div>
-  </div>
 
-  <div class="method" >
-    <h6>Method Url: {{recipeCtrl.recipe.source_url}}</h6>
+  <div class= "nutrients">
+    <table class="table-bordered">
+      <tr>
+        <th >Nutrients</th>
+        <th >Values</th>
+      </tr>
 
-  </div>
-  </div>
+      <tr>
+        <td>Percent Carbohydrates</td>
+        <td>{{((recipeCtrl.recipe.percentCarbohydrates/100)*( recipeCtrl.recipe.totalCalories/recipe.serving || recipeCtrl.recipe.totalCalories/4)/4)}} g</td>
+      </tr>
+      <tr>
+        <td>Percent Proteins</td>
+        <td>{{((recipeCtrl.recipe.percentProtein/100)*( recipeCtrl.recipe.totalCalories/recipe.serving || recipeCtrl.recipe.totalCalories/4)/4)}} g </td>
+      </tr>
+      <tr>
+        <td>Percent Fat</td>
+        <td>{{((recipeCtrl.recipe.percentFat/100)*( recipeCtrl.recipe.totalCalories/recipe.serving || recipeCtrl.recipe.totalCalories/4)/9)}} g </td>
+      </tr>
+      <tr>
+        <td>Monounsaturated Fat</td>
+        <td>{{recipeCtrl.recipe.monoUnsaturatedFat}} g  </td>
+      </tr>
+      <tr>
+        <td>Polyunsaturated Fat</td>
+        <td>{{recipeCtrl.recipe.polyUnsaturatedFat}} g </td>
+      </tr>
+      <tr>
+        <td>Vitamin C </td>
+        <td>{{recipeCtrl.recipe.vitaminC}} mg </td>
+      </tr>
+      <tr>
+        <td>vitamin A</td>
+        <td>{{recipeCtrl.recipe.vitaminA}} ug </td>
+      </tr>
+      <tr>
+        <td>vitamin B6</td>
+        <td>{{recipeCtrl.recipe.vitaminB6}} mg </td>
+      </tr>
+      <tr>
+        <td>vitamin B12</td>
+        <td>{{recipeCtrl.recipe.vitaminB12}} ug </td>
+      </tr>
+    </table>
+    </div>
+
+    <div class="ingredients" >
+    <h4>Ingredients:</h4>
+      <div ng-repeat="ingredient in recipeCtrl.recipe.ingredients">
+        <p>{{ingredient.name}}</p>
+      </div>
+    </div>
+
+    <div class="method" >
+
+      <h4>Method Url: {{recipeCtrl.recipe.source_url}}</h6>
+
+    </div>
+    </div>
+  <!-- </div> -->
 </div>
 

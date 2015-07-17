@@ -1,9 +1,36 @@
- .container {
- /* background: url("food.jpeg");*/
+ .outer {
+  background: url("food3.jpeg");
 
 }
 
 h1{
 text-align: center;
 padding-top: 200px;
+color:#99004C;
+}
+.recipe{
+  background-color: rgba(255, 255, 255, 0.9);
+  padding-left: 10em;
+  padding-right: 10em;
+  font-weight: 900;
+
+}
+h3{
+
+}
+
+.calories{
+  font-size: 15px;
+  font-color:#337ab7;
+}
+.homePage{
+  background-color: rgba(255, 255, 255, 0.7);
+  font-weight: 900;
+}
+.recipeList{
+  font-weight: 900;
+  font-size: 15px;
+}
+a{
+  font-size: 20px;
 }
