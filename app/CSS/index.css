@@ -8,6 +8,9 @@ text-align: center;
 padding-top: 200px;
 color:#99004C;
 }
+h3{
+  color:#99004C;
+}
 .recipe{
   background-color: rgba(255, 255, 255, 0.9);
   padding-left: 10em;
@@ -15,14 +18,14 @@ color:#99004C;
   font-weight: 900;
 
 }
-h3{
 
-}
 
 .calories{
   font-size: 15px;
-  font-color:#337ab7;
+  color:#337AB7;
+
 }
+
 .homePage{
   background-color: rgba(255, 255, 255, 0.7);
   font-weight: 900;
@@ -32,5 +35,6 @@ h3{
   font-size: 15px;
 }
 a{
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: 900;
 }

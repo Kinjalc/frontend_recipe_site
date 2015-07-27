@@ -7,7 +7,7 @@
       <p>Total calories: {{recipeCtrl.recipe.totalCalories/recipe.serving || recipeCtrl.recipe.totalCalories/4}} calories per serving</p>
       <p> Carbohydrates Percent= {{recipeCtrl.recipe.percentCarbohydrates}} % </p>
       <p> Proteins Percent= {{recipeCtrl.recipe.percentProtein}} % </p>
-      <p> Proteins Percent= {{recipeCtrl.recipe.percentFat}} % </p>
+      <p> Fat Percent= {{recipeCtrl.recipe.percentFat}} % </p>
     </div>
 
   <div class= "nutrients">
@@ -18,15 +18,15 @@
       </tr>
 
       <tr>
-        <td>Percent Carbohydrates</td>
+        <td> Carbohydrates</td>
         <td>{{((recipeCtrl.recipe.percentCarbohydrates/100)*( recipeCtrl.recipe.totalCalories/recipe.serving || recipeCtrl.recipe.totalCalories/4)/4)}} g</td>
       </tr>
       <tr>
-        <td>Percent Proteins</td>
+        <td> Proteins</td>
         <td>{{((recipeCtrl.recipe.percentProtein/100)*( recipeCtrl.recipe.totalCalories/recipe.serving || recipeCtrl.recipe.totalCalories/4)/4)}} g </td>
       </tr>
       <tr>
-        <td>Percent Fat</td>
+        <td> Fat</td>
         <td>{{((recipeCtrl.recipe.percentFat/100)*( recipeCtrl.recipe.totalCalories/recipe.serving || recipeCtrl.recipe.totalCalories/4)/9)}} g </td>
       </tr>
       <tr>
