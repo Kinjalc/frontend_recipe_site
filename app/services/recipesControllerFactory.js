@@ -9,20 +9,20 @@
 
     factory.getRecipes = function() {
 
-      return $http.get('http://localhost:3000/recipes').success(function(response) {
+      return $http.get('https://secret-river-4132.herokuapp.com/recipes').success(function(response) {
         angular.copy(response, factory.recipes);
       });
     };
 
     factory.getRecipe = function(recipeId) {
-      return $http.get('http://localhost:3000/recipes/' + recipeId).success(function(response) {
+      return $http.get('https://secret-river-4132.herokuapp.com/recipes/' + recipeId).success(function(response) {
         angular.copy(response[0], factory.recipe);
       });
 
     }
 
     factory.getNutritionPickRecipes = function(nutritionPick) {
-      return $http.get('http://localhost:3000/recipes/nutrition/' + nutritionPick).success(function(response) {
+      return $http.get('https://secret-river-4132.herokuapp.com/recipes/nutrition/' + nutritionPick).success(function(response) {
         angular.copy(response, factory.recipes);
       });
 
