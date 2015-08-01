@@ -1,5 +1,5 @@
 .outer {
-  background: url("css/food3.jpeg");
+  background: url("http://static4.depositphotos.com/1002075/307/v/950/depositphotos_3077314-FOOD.-Word-collage-on-black-background..jpg");
 
 }
 
@@ -13,7 +13,7 @@ h3{
 }
 .recipe{
   background-color: rgba(255, 255, 255, 0.9);
-  padding-left: 10em;
+  /*padding-left: 10em;*/
   padding-right: 10em;
   font-weight: 900;
 
