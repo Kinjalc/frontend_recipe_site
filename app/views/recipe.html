@@ -10,48 +10,73 @@
       <p> Fat Percent= {{recipeCtrl.recipe.percentFat}} % </p>
     </div>
 
+    <input type='text' ng-model='calorie' placeholder="Enter calories" ng-minlength="3" ng-maxlength="4"></input>
+
   <div class= "nutrients">
     <table class="table-bordered">
       <tr>
         <th >Nutrients</th>
-        <th >Values</th>
+        <th >Values(per serving)</th>
+        <th >Recommended Daily values(2000calories diet)</th>
+        <th >Your recommended daily value(entered calories)</th>
+        <th > % daily value from recipe</th>
       </tr>
 
       <tr>
         <td> Carbohydrates</td>
-        <td>{{((recipeCtrl.recipe.percentCarbohydrates/100)*( recipeCtrl.recipe.totalCalories/recipe.serving || recipeCtrl.recipe.totalCalories/4)/4)}} g</td>
+        <td>{{((recipeCtrl.recipe.percentCarbohydrates/100)*( recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize || recipeCtrl.recipe.totalCalories/4)/4)||0}} g</td>
+        <td> 300g</td>
+        <td>{{(calorie*300)/2000 || "N/a"}}</td>
+        <td>{{(((recipeCtrl.recipe.percentCarbohydrates/100)*( recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize))/4)*100/((calorie*300)/2000) || "N/a"}}</td>
       </tr>
       <tr>
         <td> Proteins</td>
-        <td>{{((recipeCtrl.recipe.percentProtein/100)*( recipeCtrl.recipe.totalCalories/recipe.serving || recipeCtrl.recipe.totalCalories/4)/4)}} g </td>
+        <td>{{((recipeCtrl.recipe.percentProtein/100)*( recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize || recipeCtrl.recipe.totalCalories/4)/4)||0}} g </td>
+        <td>50  g</td>
+        <td>{{(calorie*50)/2000 || "N/a"}}</td>
+        <td>{{(((recipeCtrl.recipe.percentProtein/100)*( recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize))/4)*100/((calorie*50)/2000) || "N/a"}}</td>
       </tr>
       <tr>
         <td> Fat</td>
-        <td>{{((recipeCtrl.recipe.percentFat/100)*( recipeCtrl.recipe.totalCalories/recipe.serving || recipeCtrl.recipe.totalCalories/4)/9)}} g </td>
+        <td>{{((recipeCtrl.recipe.percentFat/100)*( recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize || recipeCtrl.recipe.totalCalories/4)/9)||0}} g </td>
+        <td>65 g</td>
+        <td>{{(calorie*65)/2000 || "N/a"}}</td>
+        <td>{{(((recipeCtrl.recipe.percentFat/100)*(recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize))/9)*100/((calorie*65)/2000) || "N/a"}}</td>
+      </tr>
+      <tr>
+        <td>Saturated Fat</td>
+        <td>{{recipeCtrl.recipe.saturatedFat/recipeCtrl.recipe.servingSize||0}} g  </td>
+        <td>20 g</td>
       </tr>
       <tr>
         <td>Monounsaturated Fat</td>
-        <td>{{recipeCtrl.recipe.monoUnsaturatedFat}} g  </td>
+        <td>{{recipeCtrl.recipe.monoUnsaturatedFat/recipeCtrl.recipe.servingSize||0}} g  </td>
+        <td>N/a</td>
       </tr>
       <tr>
         <td>Polyunsaturated Fat</td>
-        <td>{{recipeCtrl.recipe.polyUnsaturatedFat}} g </td>
+        <td>{{recipeCtrl.recipe.polyUnsaturatedFat/recipeCtrl.recipe.servingSize||0}} g </td>
+        <td>N/a</td>
       </tr>
       <tr>
         <td>Vitamin C </td>
-        <td>{{recipeCtrl.recipe.vitaminC}} mg </td>
+        <td>{{recipeCtrl.recipe.vitaminC/recipeCtrl.recipe.servingSize||0}} mg </td>
+        <td>60 mg </td>
       </tr>
       <tr>
         <td>vitamin A</td>
-        <td>{{recipeCtrl.recipe.vitaminA}} ug </td>
+        <td>{{recipeCtrl.recipe.vitaminA/recipeCtrl.recipe.servingSize||0}} ug </td>
+        <td>N/a</td>
       </tr>
       <tr>
         <td>vitamin B6</td>
-        <td>{{recipeCtrl.recipe.vitaminB6}} mg </td>
+        <td>{{recipeCtrl.recipe.vitaminB6/recipeCtrl.recipe.servingSize||0}} mg </td>
+        <td>2 ug</td>
       </tr>
       <tr>
         <td>vitamin B12</td>
-        <td>{{recipeCtrl.recipe.vitaminB12}} ug </td>
+        <td>{{recipeCtrl.recipe.vitaminB12/recipe.servingSize||0}} ug </td>
+        <td>6 ug</td>
       </tr>
     </table>
     </div>
