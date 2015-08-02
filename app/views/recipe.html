@@ -1,99 +1,117 @@
-<div  class=".col-lg-8 col-md-8 col-md-offset-3 recipe " >
+<div  class="col-md-8 col-md-offset-2 recipe " >
   <!-- <div class="recipe text-center"> -->
  <!--  <div class= "text-center"> -->
-    <h3>{{recipeCtrl.recipe.title}}</h3>
+    <h2 class="col-md-12 col-md-offset-2">{{recipeCtrl.recipe.title}}</h2>
     <div class="calories">
       <img ng-src="{{recipeCtrl.recipe.image_url}}">
-      <p>Total calories: {{recipeCtrl.recipe.totalCalories/recipe.serving || recipeCtrl.recipe.totalCalories/4}} calories per serving</p>
-      <p> Carbohydrates Percent= {{recipeCtrl.recipe.percentCarbohydrates}} % </p>
-      <p> Proteins Percent= {{recipeCtrl.recipe.percentProtein}} % </p>
-      <p> Fat Percent= {{recipeCtrl.recipe.percentFat}} % </p>
+      <div class="col-md-12 col-md-offset-2 recipeDetail">
+        <p>Total calories: {{recipeCtrl.recipe.totalCalories/recipe.serving || recipeCtrl.recipe.totalCalories/4  | number:2}} calories per serving</p>
+        <p> Carbohydrates Percent= {{recipeCtrl.recipe.percentCarbohydrates  | number:2}} % </p>
+        <p> Proteins Percent= {{recipeCtrl.recipe.percentProtein  | number:2}} % </p>
+        <p> Fat Percent= {{recipeCtrl.recipe.percentFat  | number:2}} % </p>
+      </div>
+    </div>
+    <div class="user_input col-md-12 col-md-offset-2">
+      <p>The daily nutrient requirement (for a 2000 calorie diet) is listed in column 3. Enter your personal daily calorie requirement to see how much of it will come from this recipe</p>
+      <input class="col-md-6 col-md-offset-2 text-center userInput" type='text' ng-model='calorie' placeholder="Enter calories (Ex: 1800)" ng-minlength="3" ng-maxlength="4"></input>
     </div>
 
-    <input type='text' ng-model='calorie' placeholder="Enter calories" ng-minlength="3" ng-maxlength="4"></input>
-
   <div class= "nutrients">
-    <table class="table-bordered">
+    <table class="table table-bordered col-md-12 col-md-offset-2">
       <tr>
         <th >Nutrients</th>
         <th >Values(per serving)</th>
-        <th >Recommended Daily values(2000calories diet)</th>
+        <th >Recommended Daily values(2000 calorie diet)</th>
         <th >Your recommended daily value(entered calories)</th>
-        <th > % daily value from recipe</th>
+        <th >Your % daily value from recipe</th>
       </tr>
 
       <tr>
-        <td> Carbohydrates</td>
-        <td>{{((recipeCtrl.recipe.percentCarbohydrates/100)*( recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize || recipeCtrl.recipe.totalCalories/4)/4)||0}} g</td>
+        <td> Carbohydrates(g)</td>
+        <td >{{((recipeCtrl.recipe.percentCarbohydrates/100)*( recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize || recipeCtrl.recipe.totalCalories/4)/4)||0  | number:2}} g</td>
         <td> 300g</td>
-        <td>{{(calorie*300)/2000 || "N/a"}}</td>
-        <td>{{(((recipeCtrl.recipe.percentCarbohydrates/100)*( recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize))/4)*100/((calorie*300)/2000) || "N/a"}}</td>
+        <td>{{(calorie*300)/2000 || "N/a" | number:2}}</td>
+        <td>{{(((recipeCtrl.recipe.percentCarbohydrates/100)*( recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize))/4)*100/((calorie*300)/2000) || "N/a"  | number:2}}</td>
       </tr>
       <tr>
-        <td> Proteins</td>
-        <td>{{((recipeCtrl.recipe.percentProtein/100)*( recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize || recipeCtrl.recipe.totalCalories/4)/4)||0}} g </td>
+        <td> Proteins(g)</td>
+        <td>{{((recipeCtrl.recipe.percentProtein/100)*( recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize || recipeCtrl.recipe.totalCalories/4)/4)||0  | number:2}} g </td>
         <td>50  g</td>
-        <td>{{(calorie*50)/2000 || "N/a"}}</td>
-        <td>{{(((recipeCtrl.recipe.percentProtein/100)*( recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize))/4)*100/((calorie*50)/2000) || "N/a"}}</td>
+        <td>{{(calorie*50)/2000 || "N/a"  | number:2}}</td>
+        <td>{{((((recipeCtrl.recipe.percentProtein/100)*( recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize))/4)*100/((calorie*50)/2000)) || "N/a"  | number:2}}</td>
       </tr>
       <tr>
-        <td> Fat</td>
-        <td>{{((recipeCtrl.recipe.percentFat/100)*( recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize || recipeCtrl.recipe.totalCalories/4)/9)||0}} g </td>
+        <td> Fat(g)</td>
+        <td>{{((recipeCtrl.recipe.percentFat/100)*( recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize || recipeCtrl.recipe.totalCalories/4)/9)||0  | number:2}} g </td>
         <td>65 g</td>
         <td>{{(calorie*65)/2000 || "N/a"}}</td>
-        <td>{{(((recipeCtrl.recipe.percentFat/100)*(recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize))/9)*100/((calorie*65)/2000) || "N/a"}}</td>
+        <td>{{((((recipeCtrl.recipe.percentFat/100)*(recipeCtrl.recipe.totalCalories/recipeCtrl.recipe.servingSize))/9)*100/((calorie*65)/2000)) || "N/a"  | number:2}}</td>
       </tr>
       <tr>
-        <td>Saturated Fat</td>
-        <td>{{recipeCtrl.recipe.saturatedFat/recipeCtrl.recipe.servingSize||0}} g  </td>
+        <td>Saturated Fat(g)</td>
+        <td>{{recipeCtrl.recipe.saturatedFat/recipeCtrl.recipe.servingSize||0  | number:2}} g  </td>
         <td>20 g</td>
+        <td>{{(calorie*20)/2000 || "N/a"}}</td>
+        <td>{{(recipeCtrl.recipe.saturatedFat/recipeCtrl.recipe.servingSize)*100/((calorie*20)/2000) || "N/a"  | number:2}}</td>
       </tr>
       <tr>
-        <td>Monounsaturated Fat</td>
-        <td>{{recipeCtrl.recipe.monoUnsaturatedFat/recipeCtrl.recipe.servingSize||0}} g  </td>
+        <td>Monounsaturated Fat(g)</td>
+        <td>{{recipeCtrl.recipe.monoUnsaturatedFat/recipeCtrl.recipe.servingSize||0  | number:2}} g  </td>
+        <td> N/a</td>
+        <td> N/a</td>
+        <td> N/a</td>
+      </tr>
+      <tr>
+        <td>Polyunsaturated Fat(g)</td>
+        <td>{{recipeCtrl.recipe.polyUnsaturatedFat/recipeCtrl.recipe.servingSize||0  | number:2}} g </td>
         <td>N/a</td>
+        <td> N/a</td>
+        <td> N/a</td>
       </tr>
       <tr>
-        <td>Polyunsaturated Fat</td>
-        <td>{{recipeCtrl.recipe.polyUnsaturatedFat/recipeCtrl.recipe.servingSize||0}} g </td>
-        <td>N/a</td>
-      </tr>
-      <tr>
-        <td>Vitamin C </td>
-        <td>{{recipeCtrl.recipe.vitaminC/recipeCtrl.recipe.servingSize||0}} mg </td>
+        <td>Vitamin C(mg) </td>
+        <td>{{recipeCtrl.recipe.vitaminC/recipeCtrl.recipe.servingSize||0  | number:2}} mg </td>
         <td>60 mg </td>
+        <td>{{(calorie*60)/2000  || "N/a"}}</td>
+        <td>{{(recipeCtrl.recipe.vitaminC/recipeCtrl.recipe.servingSize)*100/((calorie*60)/2000) || "N/a"  | number:2}}</td>
       </tr>
       <tr>
-        <td>vitamin A</td>
-        <td>{{recipeCtrl.recipe.vitaminA/recipeCtrl.recipe.servingSize||0}} ug </td>
+        <td>vitamin A(ug)</td>
+        <td>{{recipeCtrl.recipe.vitaminA/recipeCtrl.recipe.servingSize||0  | number:2}} ug </td>
         <td>N/a</td>
+        <td> N/a</td>
+        <td> N/a</td>
       </tr>
       <tr>
-        <td>vitamin B6</td>
-        <td>{{recipeCtrl.recipe.vitaminB6/recipeCtrl.recipe.servingSize||0}} mg </td>
-        <td>2 ug</td>
+        <td>vitamin B6(mg)</td>
+        <td>{{recipeCtrl.recipe.vitaminB6/recipeCtrl.recipe.servingSize||0  | number:2}} mg </td>
+        <td> 2 mg</td>
+        <td>{{(calorie*2)/2000 || "N/a"}}</td>
+        <td>{{(recipeCtrl.recipe.vitaminB6/recipeCtrl.recipe.servingSize)*100/((calorie*2)/2000) || "N/a"  | number:2}}</td>
       </tr>
       <tr>
-        <td>vitamin B12</td>
-        <td>{{recipeCtrl.recipe.vitaminB12/recipe.servingSize||0}} ug </td>
-        <td>6 ug</td>
+        <td>vitamin B12(ug)</td>
+        <td>{{recipeCtrl.recipe.vitaminB12/recipe.servingSize||0  | number:2}} ug </td>
+        <td> 6 ug</td>
+        <td>{{(calorie*6)/2000  || "N/a"  | number:2}}</td>
+        <td>{{(recipeCtrl.recipe.vitaminB12/recipe.servingSize)*100/((calorie*6)/2000)  || "N/a"  | number:2}}</td>
       </tr>
     </table>
     </div>
 
-    <div class="ingredients" >
-    <h4>Ingredients:</h4>
+    <div class="ingredients col-md-12 col-md-offset-2" >
+      <h4>Ingredients:</h4>
       <div ng-repeat="ingredient in recipeCtrl.recipe.ingredients">
         <p>{{ingredient.name}}</p>
       </div>
     </div>
 
-    <div class="method" >
+    <div class="method col-md-12 col-md-offset-2" >
 
-      <h4>Method Url: {{recipeCtrl.recipe.source_url}}</h6>
+      <h4>Method Url: <a href="{{recipeCtrl.recipe.source_url}}">{{recipeCtrl.recipe.source_url}}</a></h4>
 
     </div>
     </div>
-  <!-- </div> -->
+
 </div>
 
