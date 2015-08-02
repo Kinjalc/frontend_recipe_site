@@ -1,30 +1,49 @@
-<div class='text-center homePage col-md-12'>
+<!-- <header>
   <h1>NUTRILICIOUS</h1>
-  <h3> Now you can choose recipes based on nutrition content</h3>
-  <h4>Pick what you want to eat</h4>
-  <!-- <a ng-href="#/recipes/nutrition/highFat">
-    <button type="text">High Fat</button>
-  </a>
-  <a ng-href="#/recipes/nutrition/highProtein">
-    <button type="text">High Protein</button>
-  </a> -->
-  <div class="btn-group">
-  <button class="btn btn-primary btn-lg"  >
-    <select ng-model = "selectNutritionCtrl.selectedNutritionPick"  ng-change="selectNutritionCtrl.selectedNutrition(selectNutritionCtrl.selectedNutritionPick)" >
-              <option value="">Pick your nutrition</option>
-              <option value="highFat">High Fat</option>
-              <option value="highProtein">High Protein</option>
-              <option value="highCarbohydrates">High Carbohydrates</option>
-              <option value="lowFat">Low Fat</option>
-              <option value="lowCarbohydrates">Low Carbohydrates</option>
-    </select>
-    </button>
+</header> -->
+<div class='text-center homePage col-md-12'>
+  <div class="about text-left">
+    <h3>
+    <div>Nutrilicious provides you delicious recipes along with the much needed nutrition information. You can now pick your recipes based our your nutrition choices like- "high/low carbohydrates","high/low Protein" or "high/low Fat".
+    <div/>
+    <div style="margin-top:1em;">
+     Nutrilicious makes it super easy for you to calculate your daily nutrient requirements based on the calorie intake you specify!
+     </div>
+    </h3>
+  </div>
+  <div class="pickNutrient">
+    <p>Find recipes by nutrition</p>
+    <!-- <a ng-href="#/recipes/nutrition/highFat">
+      <button type="text">High Fat</button>
+    </a>
+    <a ng-href="#/recipes/nutrition/highProtein">
+      <button type="text">High Protein</button>
+    </a> -->
+    <div class="btn-group">
+      <button class="btn btn-default btn-lg"  >
+        <select ng-model = "selectNutritionCtrl.selectedNutritionPick"  ng-change="selectNutritionCtrl.selectedNutrition(selectNutritionCtrl.selectedNutritionPick)" >
+                  <option value="">Pick your nutrition</option>
+                  <option value="highFat">High Fat</option>
+                  <option value="highProtein">High Protein</option>
+                  <option value="highCarbohydrates">High Carbohydrates</option>
+                  <option value="lowFat">Low Fat</option>
+                  <option value="lowCarbohydrates">Low Carbohydrates</option>
+        </select>
+      </button>
+    </div>
   </div>
   <div class="recipeList">
     <div ng-repeat="recipe in selectNutritionCtrl.recipes">
         <div ng-if="recipe.totalCalories!==NaN">
-          <a ng-href="#/recipes/{{recipe._id}}">{{recipe.title}}</a>
-          <p>Total calories: {{recipe.totalCalories/recipe.serving || recipe.totalCalories/4}} calories per serving</p>
+          <div class="row each_recipe">
+            <div class="col-md-4">
+              <img class="img-thumbnail" width="200" height="250" ng-src="{{recipe.image_url}}">
+            </div>
+            <div class="col-md-6 recipe_detail">
+              <a ng-href="#/recipes/{{recipe._id}}">{{recipe.title}}</a>
+              <p>Total calories: {{recipe.totalCalories/recipe.serving || recipe.totalCalories/4}} calories per serving</p>
+            </div>
+          </div>
           <!-- <p>Percentage total Calories:{{ (recipe.totalCalories / recipesCtrl.dailyCalcs || recipe.totalCalories/2000)*100}}</p >-->
 
         <!-- <a href="#/recipes/{{recipe._id}}">View recipe</a> -->

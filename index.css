@@ -1,22 +1,67 @@
-.outer {
-  background: url("http://static4.depositphotos.com/1002075/307/v/950/depositphotos_3077314-FOOD.-Word-collage-on-black-background..jpg");
-
+h1 {
+  text-align: center;
+  /*padding-top: 200px;*/
+  /*color:#99004C;*/
+  padding: 40px;
+  font-size: 100px;
 }
 
-h1{
+h1, h2, h3, h4 {
+  font-family: "Lato";
+  font-weight: 300;
+}
+
+header {
+  /*background-color: rgba(255, 255, 255, 0.9);*/
+/*background: url("http://www.lifestylestone.com/wp-content/uploads/2012/12/Slate-Slab-Blue-Grey.jpg")*/
+background-color: black;
+color:white;
+}
+
+body{
+  /*background: url("http://static4.depositphotos.com/1002075/307/v/950/depositphotos_3077314-FOOD.-Word-collage-on-black-background..jpg");*/
+ /*background: url("http://cache2.asset-cache.net/gc/517898193-food-background-gettyimages.jpg?v=1&c=IWSAsset&k=2&d=93QwQeQZ7jOkku81KHAikfswYmFVOu1eEiMIG7%2Firh8YfMYMdBzRY8WJOq53%2BQzygOlGDtKMToFnQ6nI0l2UNg%3D%3D");*/
+ /*background: url("http://previews.123rf.com/images/udra/udra1210/udra121000061/15801830-Vegetables-and-spices-vintage-border-and-empty-cutting-board-Stock-Photo.jpg");*/
+ /*background: url("http://thumbs.dreamstime.com/z/top-view-many-plates-food-over-white-background-33093505.jpg");*/
+background:url("http://f.tqn.com/y/default/food/T/181519614.jpg");
+font-family: "Roboto";
+}
+
+a {
+  font-weight: 300 !important;
+}
+
+/*.outer{
+  background-color: rgba(255, 255, 255, 0.7);
+}
+/*.outer{
+  background-color: #808080;
+}*/
+.homePage h1{
+background-color: rgba(255, 255, 255, 0.9);
 text-align: center;
 padding-top: 200px;
-color:#99004C;
+color: #F5F5F5;
 }
+.about{
+  background-color: black;
+}
+
 h3{
-  color:#99004C;
+  color:white;
+  padding:2em;
 }
+
+.btn-default {
+  /* color: #fff; */
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
 .recipe{
   background-color: rgba(255, 255, 255, 0.9);
   /*padding-left: 10em;*/
   padding-right: 10em;
-  font-weight: 900;
-
 }
 
 
@@ -27,14 +72,76 @@ h3{
 }
 
 .homePage{
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #F5F5F5;
   font-weight: 900;
 }
 .recipeList{
   font-weight: 900;
   font-size: 15px;
 }
+
 a{
   font-size: 30px;
   font-weight: 900;
+}
+
+.calories img {
+  border: 0;
+  height: 500px;
+  margin-left: 7em;
+  /* text-align: center; */
+  width: 600px;
+}
+
+.recipe_detail{
+  padding: 2em;
+}
+.row.each_recipe {
+  border-style: solid;
+  border-bottom: #D3D3D3;
+  border-color: #D3D3D3;
+  border-left: none;
+  border-right: none;
+}
+.pickNutrient p {
+  font-size: 20px;
+}
+.pickNutrient{
+  padding:2em;
+}
+.col-md-12.col-md-offset-2.recipeDetail {
+  padding: 2em;
+}
+.user_input.col-md-12.col-md-offset-2 {
+  padding: 2em;
+  background-color: black;
+}
+.user_input.col-md-12.col-md-offset-2 p{
+  color:white;
+}
+.nutrients {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+.method a{
+  font-size: 15px;
+}
+.recipe h2{
+  padding: 1em;
+  font-size: 40px;
+  background-color: black;
+  color: white;
+}
+.recipeDetail p{
+  font-size: 20px;
+}
+.ingredients h4{
+  color: #337ab7;
+  font-size: 25px
+}
+.ingredients {
+  border-style: solid;
+  margin-top: 2em;
+  border-color: #D3D3D3;
 }
